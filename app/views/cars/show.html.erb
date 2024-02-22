@@ -1,0 +1,27 @@
+<h1>Cars#show</h1>
+<p>Find me in app/views/cars/show.html.erb</p>
+
+<div class="card" style="width: 29rem; background-color: black;">
+  <img src="https://hips.hearstapps.com/hmg-prod/images/img-1484-jpg-649644d3c1386.jpg?crop=0.571xw:0.762xh;0.240xw,0.195xh&resize=1200:*" class="card-img-top" alt="Car Image">
+  <div class="card-body" style="color: white;">
+    <h5 class="card-title"><%= @car.model %></h5>
+    <h6 class="card-text"><%= @car.brand %></h6>
+    <h6 class="card-text"><%= @car.address %></h6>
+    <h6 class="card-text"><%= @car.year_of_production %></h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+    <%= form_with(model: @booking, url: car_bookings_path(@car), method: :post, local: true) do |f| %>
+      <div class="form-inputs">
+        <%= f.label :starts_at, "Start Date" %>
+        <%= f.text_field :starts_at, class: "form-control", data: { controller: "datepicker" } %>
+
+        <%= f.label :ends_at, "End Date" %>
+        <%= f.text_field :ends_at, class: "form-control", data: { controller: "datepicker" } %>
+      </div>
+
+      <div class="form-actions mt-3">
+        <%= f.submit "Reserve", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
