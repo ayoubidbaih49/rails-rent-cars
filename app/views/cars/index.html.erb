@@ -1,25 +1,26 @@
-<div class="container ">
-<div class="cont text-center">
-  <h1 class="mt-3" style="color:#0D6EFD;">Cars Avaliable For Rent</h1>
-  <label  for="site-search">Search For a Car:</label>
-  <input style="with: 90px;" type="search" id="site-search" name="q" class="rounded-pill" />
-  <button class="btn btn-primary rounded-pill mx-auto my-3">Search</button>
+  <div class="container ">
+  <div class="cont text-center">
+    <h1 class="mt-3" style="color:#0D6EFD;">Cars Avaliable For Rent</h1>
+    <label  for="site-search">Search For a Car:</label>
+    <input style="with: 90px;" type="search" id="site-search" name="q" class="rounded-pill" />
+    <button class="btn btn-primary rounded-pill mx-auto my-3">Search</button>
 
-</div>
-  <div class="row justify-content-center mt-5">
-    <% @cars.each do |car| %>
-      <div class="col-md-3">
-        <div class="card mb-4">
-          <img src="https://hips.hearstapps.com/hmg-prod/images/img-1484-jpg-649644d3c1386.jpg?crop=0.571xw:0.762xh;0.240xw,0.195xh&resize=1200:*" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Brand :<%= car.brand %></h5>
-            <p class="card-text">Model :<%= car.model %></p>
-            <p class="card-text">Year <%= car.year_of_production %></p>
-            <p class="card-text">Price : <%= car.price_per_day %></p>
-            <%= link_to "Reserver", car_path(car), class: "btn btn-primary" %>
+    </div>
+      <div class="row justify-content-center mt-5">
+      <% @cars.each do |car| %>
+        <div class="col-md-3">
+          <div class="card mb-4">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/img-1484-jpg-649644d3c1386.jpg?crop=0.571xw:0.762xh;0.240xw,0.195xh&resize=1200:*" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Brand :<%= car.brand %></h5>
+              <p class="card-text">Model :<%= car.model %></p>
+              <p class="card-text">Year <%= car.year_of_production %></p>
+              <p class="card-text">Price : <%= car.price_per_day %></p>
+              <%= link_to "Reserver", car_path(car), class: "btn btn-primary" %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+```
